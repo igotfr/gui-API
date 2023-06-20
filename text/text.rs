@@ -1,6 +1,10 @@
 // https://docs.rs/iced/latest/iced/
 // like iced https://docs.rs/iced_native/latest/iced_native/widget/text/struct.Text.html
-text(text: impl ToString) -> widget::Text<'a, Renderer>
+text<'a, Renderer>(text: impl ToString) -> widget::Text<'a, Renderer>
+where
+    Renderer: crate::text::Renderer,
+    Renderer::Theme: widget::text::StyleSheet,
+
   .width(width: impl Into<Length>)
   .height(height: impl Into<Length>)
   .size(size: impl Into<Pixels>)
