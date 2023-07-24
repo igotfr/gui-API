@@ -27,7 +27,14 @@ where
   .clone_into()
   .clone_from()
 
-tuple FontWeight(u32)
+tuple FontStyle(u32);
+
+impl FontStyle {
+  const Normal: FontStyle = FontStyle(0);
+  const Italic: FontStyle = FontStyle(1);
+}
+
+tuple FontWeight(u32);
 
 impl FontWeight {
   const W100: FontWeight = FontWeight(100);
